@@ -33,6 +33,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   lottie: ^0.7.0+1
   charts_flutter: ^0.10.0
+  carousel_slider: ^3.0.0
 
 dev_dependencies:
   json_serializable: ^3.5.1
