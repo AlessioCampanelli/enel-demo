@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:uidemo/widgets/navigationbar/navbar.dart';
 
 class AccountTab extends StatefulWidget {
   @override
@@ -8,6 +10,8 @@ class AccountTab extends StatefulWidget {
 class _SupportTabState extends State<AccountTab> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: EnelNavBar('Account'),
+    );
   }
 }

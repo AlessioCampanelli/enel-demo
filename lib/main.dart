@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:uidemo/pages/tabs/account.dart';
-import 'package:uidemo/pages/tabs/bills/bills.dart';
+import 'package:uidemo/pages/tabs/bills/bills_screen.dart';
 import 'package:uidemo/pages/tabs/news.dart';
 import 'package:uidemo/pages/tabs/support.dart';
 import 'package:uidemo/pages/tabs/wow.dart';
-import 'package:uidemo/constants.dart';
+import 'package:uidemo/config/constants.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -72,21 +72,31 @@ class EnelEnergiaApp extends StatelessWidget {
       home: SplashScreen(),
       theme: ThemeData(
         textTheme: TextTheme(
-          headline1: TextStyle(
-              fontSize: 22.0, fontWeight: FontWeight.bold, color: Colors.white),
-          headline2: TextStyle(
-              fontSize: 16.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              fontFamily: 'Open Sans'),
-          headline3: TextStyle(
-              fontSize: 14.0,
-              fontWeight: FontWeight.normal,
-              color: Colors.white,
-              fontFamily: 'Open Sans'),
-          bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
-        ),
+            headline1: TextStyle(
+                fontSize: 27.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white),
+            headline2: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontFamily: 'Open Sans'),
+            headline3: TextStyle(
+                fontSize: 14.0,
+                fontWeight: FontWeight.normal,
+                color: Colors.white,
+                fontFamily: 'Open Sans'),
+            headline4: TextStyle(
+                fontSize: 14.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontFamily: 'Open Sans'),
+            bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+            subtitle2: TextStyle(
+                fontSize: 14.0, fontFamily: 'Hind', color: Colors.green[700])),
         primaryColor: Constants.of(context).primary,
+        backgroundColor: Constants.of(context).background,
+        accentColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
     );

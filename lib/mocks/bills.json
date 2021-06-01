@@ -1,0 +1,19 @@
+{
+    "title": "",
+    "bills": [
+        {
+            "type": "LIGHT",
+            "title": "Luce",
+            "amount": 30,
+            "address": "via Fausto Rossi",
+            "cap": "00155 ROMA"
+        },
+        {
+            "type": "GAS",
+            "title": "Gas",
+            "amount": 40,
+            "address": "via Fausto Rossi",
+            "cap": "00155 ROMA"
+        }
+    ]
+}

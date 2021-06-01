@@ -1,15 +1,18 @@
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
+import 'package:uidemo/widgets/card/topInfo.dart';
 
 class BillChart extends StatelessWidget {
   final List<charts.Series> seriesList;
   final bool animate;
+  final String title;
 
-  BillChart(this.seriesList, {this.animate});
+  BillChart(this.title, this.seriesList, {this.animate});
 
   /// Creates a [BarChart] with custom rounded bars.
-  factory BillChart.withSampleData() {
+  factory BillChart.withSampleData(title) {
     return new BillChart(
+      title,
       _createSampleData(),
       // Disable animations for image tests.
       animate: false,
@@ -18,15 +21,26 @@ class BillChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new charts.BarChart(
-      seriesList,
-      animate: animate,
-      defaultRenderer: new charts.BarRendererConfig(
-          // By default, bar renderer will draw rounded bars with a constant
-          // radius of 100.
-          // To not have any rounded corners, use [NoCornerStrategy]
-          // To change the radius of the bars, use [ConstCornerStrategy]
-          cornerStrategy: const charts.ConstCornerStrategy(30)),
+    return Container(
+      height: double.infinity,
+      child: Column(
+        children: [
+          TopInfo(this.title, true, 'via Fausto Rossi', '00155 ROMA'),
+          Container(
+            height: 150,
+            child: new charts.BarChart(
+              seriesList,
+              animate: animate,
+              defaultRenderer: new charts.BarRendererConfig(
+                  // By default, bar renderer will draw rounded bars with a constant
+                  // radius of 100.
+                  // To not have any rounded corners, use [NoCornerStrategy]
+                  // To change the radius of the bars, use [ConstCornerStrategy]
+                  cornerStrategy: const charts.ConstCornerStrategy(30)),
+            ),
+          )
+        ],
+      ),
     );
   }
 

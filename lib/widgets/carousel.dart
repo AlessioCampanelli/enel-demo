@@ -27,18 +27,28 @@ class BoxCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: EdgeInsets.all(50),
-        width: MediaQuery.of(context).size.width,
-        margin: EdgeInsets.symmetric(horizontal: 5.0),
-        decoration: BoxDecoration(color: Colors.amber),
-        child: Column(children: [
-          Text(
-            title,
-            style: TextStyle(
-                fontSize: 17.0, color: Theme.of(context).primaryColor),
-          ),
-          ElevatedButton(onPressed: () {}, child: const Text('Enabled'))
-        ]));
+    return Stack(children: [
+      Positioned(
+          child: Image.network(
+              'https://www.enel.it/content/enel-it/it/_jcr_content/homeCarousel/items/hero_item_1360948694/imageTablet.img.jpg/1617804692227.jpg')),
+      Positioned(
+          child: Container(
+              padding: EdgeInsets.all(50),
+              width: MediaQuery.of(context).size.width,
+              margin: EdgeInsets.symmetric(horizontal: 5.0),
+              // decoration: BoxDecoration(color: Colors.amber),
+              child: Column(children: [
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.headline1,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text(buttonTitle),
+                  style: ElevatedButton.styleFrom(
+                      primary: Theme.of(context).primaryColor),
+                )
+              ])))
+    ]);
   }
 }

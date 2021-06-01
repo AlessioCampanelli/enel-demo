@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:uidemo/widgets/navigationbar/navbar.dart';
 
 class WowTab extends StatefulWidget {
   @override
@@ -8,6 +10,8 @@ class WowTab extends StatefulWidget {
 class _SupportTabState extends State<WowTab> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: EnelNavBar('Wow'),
+    );
   }
 }

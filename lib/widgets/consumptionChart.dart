@@ -1,6 +1,7 @@
 /// Line chart example
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
+import 'package:uidemo/widgets/card/topInfo.dart';
 
 class ConsumptionChart extends StatelessWidget {
   final List<charts.Series> seriesList;
@@ -19,9 +20,21 @@ class ConsumptionChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new charts.LineChart(seriesList,
-        animate: animate,
-        defaultRenderer: new charts.LineRendererConfig(includePoints: true));
+    return Container(
+      height: double.infinity,
+      child: Column(
+        children: [
+          TopInfo('Gas', true, 'via Fausto Rossi', '00155 ROMA'),
+          Container(
+            height: 150,
+            child: new charts.LineChart(seriesList,
+                animate: animate,
+                defaultRenderer:
+                    new charts.LineRendererConfig(includePoints: true)),
+          )
+        ],
+      ),
+    );
   }
 
   /// Create one series with sample hard coded data.

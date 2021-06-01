@@ -1,14 +1,24 @@
 # uidemo
 
-Flutter project based on Enel Energia UI/UX.
-
-Actually using Flutter 2.2.1-stable version.
+Flutter demo project based on Enel Energia App.
 
 ## Getting Started
+
+use `flutter 2.2.1` channel stable and `Dart 2.13.1`.
 
 `flutter pub get`
 
 `flutter run`
+
+## Architecture
+
+- viewModel, Repository, with `Stacked` package that has: View - ViewModel - Services-
+  A complete description here: https://pub.dev/packages/stacked
+
+## Mock Server
+
+- install Mockoon
+- go to `mock` folder and copy the json response you find
 
 ## Re Generate Serialization Models (using json_serializable)
 
