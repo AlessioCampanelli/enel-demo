@@ -75,7 +75,7 @@ class _HomeTabState extends State<BillsTab>
                   child: Container(
                       padding: EdgeInsets.only(top: _listviewTopPadding),
                       child: Container(
-                        color: Theme.of(context).backgroundColor,
+                        color: Theme.of(context).accentColor,
                         child: ListView.builder(
                             controller: _scrollController,
                             itemCount:
@@ -100,7 +100,13 @@ class _HomeTabState extends State<BillsTab>
                                   );
                                 case 1:
                                   return GestureDetector(
-                                    onTap: () {},
+                                    onTap: () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (context) => BillsDetails(),
+                                        ),
+                                      );
+                                    },
                                     child: EnelCard(Container(
                                       padding: EdgeInsets.all(20),
                                       height:

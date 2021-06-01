@@ -1,0 +1,12 @@
+//
+//  Staging.xcconfig
+//  Runner
+//
+//  Created by Alessio Campanelli on 01/06/21.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Generated.xcconfig"
+BUNDLE_NAME = Enel Stg
