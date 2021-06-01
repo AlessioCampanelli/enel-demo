@@ -15,10 +15,15 @@ use `flutter 2.2.1` channel stable and `Dart 2.13.1`.
 - viewModel, Repository, with `Stacked` package that has: View - ViewModel - Services-
   A complete description here: https://pub.dev/packages/stacked
 
-## Mock Server
+## Environments (flavors)
 
-- install Mockoon
-- go to `mock` folder and copy the json response you find
+use 'flutter run --flavor dev' or 'stg' or 'prod'
+
+## Mock Local Server
+
+- install Mockoon (available here: https://mockoon.com/)
+- go to `lib/mocks` folder and copy the json response you find in mockoon
+- run with `--flavor dev`
 
 ## Re Generate Serialization Models (using json_serializable)
 
