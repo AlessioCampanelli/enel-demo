@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:uidemo/config/theme.dart';
 import 'package:uidemo/pages/tabs/account.dart';
 import 'package:uidemo/pages/tabs/bills/bills_screen.dart';
-import 'package:uidemo/pages/tabs/news.dart';
-import 'package:uidemo/pages/tabs/support.dart';
-import 'package:uidemo/pages/tabs/wow.dart';
+import 'package:uidemo/pages/tabs/support/support_screen.dart';
+import 'package:uidemo/pages/tabs/wow/wow_screen.dart';
 import 'package:uidemo/config/constants.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -70,35 +70,7 @@ class EnelEnergiaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       color: Theme.of(context).primaryColor,
       home: SplashScreen(),
-      theme: ThemeData(
-        textTheme: TextTheme(
-            headline1: TextStyle(
-                fontSize: 27.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white),
-            headline2: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                fontFamily: 'Open Sans'),
-            headline3: TextStyle(
-                fontSize: 14.0,
-                fontWeight: FontWeight.normal,
-                color: Colors.white,
-                fontFamily: 'Open Sans'),
-            headline4: TextStyle(
-                fontSize: 14.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                fontFamily: 'Open Sans'),
-            bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
-            subtitle2: TextStyle(
-                fontSize: 14.0, fontFamily: 'Hind', color: Colors.green[700])),
-        primaryColor: Constants.of(context).primary,
-        backgroundColor: Constants.of(context).background,
-        accentColor: Colors.white,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: EnelTheme.create(context),
     );
   }
 }
@@ -124,13 +96,14 @@ class _MainPageState extends State<MainPage> {
               label: 'Forniture',
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.chat_rounded), label: 'Supporto'),
+                icon: Icon(Icons.chat_rounded),
+                label: AppLocalizations.of(context).supportTitle),
             BottomNavigationBarItem(
-                icon: Icon(Icons.present_to_all), label: 'Wow'),
+                icon: Icon(Icons.present_to_all),
+                label: AppLocalizations.of(context).wowTitle),
             BottomNavigationBarItem(
-                icon: Icon(Icons.list_alt_rounded), label: 'Novità'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_rounded), label: 'Account')
+                icon: Icon(Icons.account_circle_rounded),
+                label: AppLocalizations.of(context).accountTitle)
           ],
         ),
         tabBuilder: (context, index) {
@@ -142,8 +115,6 @@ class _MainPageState extends State<MainPage> {
             case 2:
               return WowTab();
             case 3:
-              return NewsTab();
-            case 4:
               return AccountTab();
             default:
               return BillsTab();

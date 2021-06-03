@@ -1,0 +1,27 @@
+{
+	"banners": [{
+			"type": "COUPON SCONTO",
+			"title": "Scopri i tuoi regali",
+			"subtitle": "Accedi qui e premiati subito",
+			"isNew": true,
+			"image": "https://www.enel.it/content/enel-it/it/_jcr_content/homeCarousel/items/hero_item_64355358/image.img.jpg/1620392326663.jpg",
+			"ctaCarousel": "Richiedi coupon"
+		},
+		{
+			"type": "INIZIATIVE SPECIALI",
+			"title": "Porta un amico",
+			"subtitle": "Scopri come ottenere un bonus in bolletta!",
+			"isNew": true,
+			"image": "https://www.enel.it/content/enel-it/it/_jcr_content/homeCarousel/items/hero_item_1360948694/imageTablet.img.jpg/1617804692227.jpg",
+			"ctaCarousel": "Partecipa subito"
+		},
+		{
+			"type": "CONCORSI",
+			"title": "Partecipa ai nostri concorsi",
+			"subtitle": "Accedi qui e tenta la fortuna!",
+			"isNew": true,
+			"image": "https://www.enel.it/content/enel-it/it/_jcr_content/homeCarousel/items/hero_item_1360948694/imageTablet.img.jpg/1617804692227.jpg",
+			"ctaCarousel": "Partecipa subito"
+		}
+	]
+}

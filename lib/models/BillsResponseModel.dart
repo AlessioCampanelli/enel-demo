@@ -1,12 +1,12 @@
-class APIResponseModel {
+class BillsResponseModel {
   String title;
   List<Bills> bills = [];
 
-  APIResponseModel({this.title, this.bills}) {
+  BillsResponseModel({this.title, this.bills}) {
     this.bills = [];
   }
 
-  APIResponseModel.fromJson(Map<String, dynamic> json) {
+  BillsResponseModel.fromJson(Map<String, dynamic> json) {
     title = json['title'];
     if (json['bills'] != null) {
       bills = [];

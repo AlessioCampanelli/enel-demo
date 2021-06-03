@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:uidemo/models/BillsResponseModel.dart';
+import 'package:uidemo/models/WowResponseModel.dart';
 import 'package:uidemo/networking/bills/NetworkingBillsResponse.dart';
-import 'package:uidemo/pages/tabs/bills/billsRepository.dart';
+import 'package:uidemo/networking/wow/NetworkingWowResponse.dart';
+import 'package:uidemo/pages/tabs/wow/wowRepository.dart';
 
-class BillsViewModel extends ChangeNotifier {
-  BillsResponseModel apiResponseModel = new BillsResponseModel();
+class WowViewModel extends ChangeNotifier {
+  WowResponseModel apiResponseModel = new WowResponseModel();
   String messageToShow = "";
   bool isLoading = false;
 
-  BillsViewModel() {
+  WowViewModel() {
     callAPI();
+    apiResponseModel.banners = [];
   }
 
   void callAPI() async {
     isLoading = true;
     notifyListeners();
-    NetworkingResponse networkingResponse = await BillsRepository().getBills();
+    NetworkingResponse networkingResponse = await WowRepository().getWow();
 
-    if (networkingResponse is NetworkingResponseData) {
+    if (networkingResponse is NetworkingWowResponseData) {
       apiResponseModel = networkingResponse.apiResponseModel;
     } else if (networkingResponse is NetworkingException) {
       messageToShow = networkingResponse.message;

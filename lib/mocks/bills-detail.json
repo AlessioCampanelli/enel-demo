@@ -1,0 +1,42 @@
+{
+	"title": "",
+	"invoices": [{
+			"type": "LIGHT",
+			"title": "Luce",
+			"id": "53434255",
+			"created": "12/05/2021",
+			"tv": 18.00,
+			"amount": 30.21,
+			"expiration": "27/05/2021",
+			"state": "Addebbitata su C/C",
+			"documents": [{
+					"title": "PDF Sintesi",
+					"url": ""
+				},
+				{
+					"title": "Dettaglio",
+					"url": ""
+				}
+			]
+		},
+		{
+			"type": "GAS",
+			"title": "Gas",
+			"id": "1232444",
+			"created": "12/05/2021",
+			"tv": 22.21,
+			"amount": 60.35,
+			"expiration": "28/06/2021",
+			"state": "Addebbitata su C/C",
+			"documents": [{
+					"title": "PDF Sintesi",
+					"url": ""
+				},
+				{
+					"title": "Dettaglio",
+					"url": ""
+				}
+			]
+		}
+	]
+}
