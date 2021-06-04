@@ -5,7 +5,7 @@ import 'package:uidemo/main_common.dart';
 
 void main() {
   var configuredApp = AppConfig(
-    appDisplayName: "Enel-Prod",
+    appDisplayName: "Enel-dev",
     appInternalId: 1,
     child: Constants(
       child: EnelEnergiaApp(),

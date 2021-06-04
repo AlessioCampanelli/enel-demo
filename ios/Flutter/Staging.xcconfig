@@ -10,3 +10,4 @@
 
 #include "Generated.xcconfig"
 BUNDLE_NAME = Enel Stg
+BASE_URL = enel-stg

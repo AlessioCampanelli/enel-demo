@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:uidemo/config/app_config.dart';
 import 'package:uidemo/config/theme.dart';
 import 'package:uidemo/pages/tabs/account.dart';
 import 'package:uidemo/pages/tabs/bills/bills_screen.dart';
@@ -10,13 +11,6 @@ import 'package:uidemo/pages/tabs/wow/wow_screen.dart';
 import 'package:uidemo/config/constants.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  runApp(Constants(
-    child: EnelEnergiaApp(),
-  ));
-}
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -55,24 +49,29 @@ class SplashScreenState extends State<SplashScreen> {
 class EnelEnergiaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: [
-        const Locale('en', ''),
-        const Locale('it', 'IT'),
-      ],
-      title: "Enel Energia",
-      debugShowCheckedModeBanner: false,
-      color: Theme.of(context).primaryColor,
-      home: SplashScreen(),
-      theme: EnelTheme.create(context),
-    );
+    var config = AppConfig.of(context);
+    return _buildApp(config.appDisplayName, context);
   }
+}
+
+Widget _buildApp(String appName, BuildContext context) {
+  return MaterialApp(
+    localizationsDelegates: [
+      AppLocalizations.delegate,
+      GlobalMaterialLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate,
+      GlobalCupertinoLocalizations.delegate,
+    ],
+    supportedLocales: [
+      const Locale('en', ''),
+      const Locale('it', 'IT'),
+    ],
+    title: appName, // "Enel Energia",
+    debugShowCheckedModeBanner: false,
+    color: Theme.of(context).primaryColor,
+    home: SplashScreen(),
+    theme: EnelTheme.create(context),
+  );
 }
 
 class MainPage extends StatefulWidget {
@@ -92,9 +91,8 @@ class _MainPageState extends State<MainPage> {
           activeColor: Theme.of(context).primaryColor,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.bar_chart_rounded),
-              label: 'Forniture',
-            ),
+                icon: Icon(Icons.bar_chart_rounded),
+                label: AppLocalizations.of(context).billsTitle),
             BottomNavigationBarItem(
                 icon: Icon(Icons.chat_rounded),
                 label: AppLocalizations.of(context).supportTitle),

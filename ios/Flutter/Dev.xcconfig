@@ -10,3 +10,4 @@
 
 #include "Generated.xcconfig"
 BUNDLE_NAME = Enel Dev
+BASE_URL = localhost

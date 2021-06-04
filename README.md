@@ -25,23 +25,21 @@ use 'flutter run --flavor dev' or 'stg' or 'prod'
 - go to `lib/mocks/enel-mock.json` and import this json file in mockoon and run it (you can access to localhost:3000/)
 - run with `--flavor dev`
 
-## Re Generate Serialization Models (using json_serializable)
+## iOS build in Production:
 
-after modifying a serialized model, call:
+in order,
 
-`flutter pub run build_runner build --delete-conflicting-outputs`
+- `flutter clean`
+- `flutter build ios --release --flavor prod -t lib/main_prod.dart`
+- Open Xcode and create Archive
 
-or start the watcher by running:
-
-`flutter pub run build_runner watch`
-
-if you have problem, try with:
-
-`flutter clean`
-
-## Update package
-
+in case of error Flutter.framework or Pod install try to:
+`Delete the Flutter.framework folder , Podfile.lock file and then run flutter clean.`
 `flutter pub get`
+
+## Android run
+
+## Android build in Production:
 
 ## In case of iOS error CocoaPods
 

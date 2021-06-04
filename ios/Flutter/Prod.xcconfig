@@ -10,3 +10,4 @@
 
 #include "Generated.xcconfig"
 BUNDLE_NAME = Enel Prod
+BASE_URL = enel-prod
