@@ -23,7 +23,7 @@ use 'flutter run --flavor dev' or 'stg' or 'prod'
 
 - install Mockoon (available here: https://mockoon.com/)
 - go to `lib/mocks/enel-mock.json` and import this json file in mockoon and run it (you can access to localhost:3000/)
-- run with `--flavor dev`
+- run with `flutter run -t lib/main_dev.dart`
 
 ## iOS build in Production:
 
